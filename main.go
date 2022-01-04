@@ -11,7 +11,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Carlbrr/BetterMutualExclusion/proto"
+	"example.com/proto"
 	"google.golang.org/grpc"
 )
 
@@ -30,7 +30,7 @@ type Node struct {
 	timestamp    int
 	ports        []string
 	replyCounter int
-	queue        proto.customQueue
+	queue        proto.Cqueue
 	protoNode    proto.Node
 	mutex        sync.Locker
 	proto.UnimplementedExclusionServiceServer
@@ -191,7 +191,7 @@ func main() {
 	id := flag.Int("I", 0, "id")
 	flag.Parse()
 
-	queue := &customQueue{queue: make([]int, 0)}
+	queue := &proto.Cqueue{queue: make([]int, 0)}
 
 	done := make(chan int)
 	n := &Node{

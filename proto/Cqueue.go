@@ -2,18 +2,18 @@ package proto
 
 import "sync"
 
-type customQueue struct {
+type Cqueue struct {
 	queue []int
 	lock  sync.RWMutex
 }
 
-func (c *customQueue) Enqueue(name int) {
+func (c *Cqueue) Enqueue(name int) {
 	c.lock.Lock()
 	defer c.lock.Unlock()
 	c.queue = append(c.queue, name)
 }
 
-func (c *customQueue) Dequeue() {
+func (c *Cqueue) Dequeue() {
 	if len(c.queue) > 0 {
 		c.lock.Lock()
 		defer c.lock.Unlock()
@@ -21,7 +21,7 @@ func (c *customQueue) Dequeue() {
 	}
 }
 
-func (c *customQueue) Front() int {
+func (c *Cqueue) Front() int {
 	if len(c.queue) > 0 {
 		c.lock.Lock()
 		defer c.lock.Unlock()
@@ -30,10 +30,10 @@ func (c *customQueue) Front() int {
 	return -1
 }
 
-func (c *customQueue) Size() int {
+func (c *Cqueue) Size() int {
 	return len(c.queue)
 }
 
-func (c *customQueue) Empty() bool {
+func (c *Cqueue) Empty() bool {
 	return len(c.queue) == 0
 }

@@ -1,5 +1,5 @@
 syntax = "proto3";
-option go_package = "Users/carl9/OneDrive/Skrivebord/MutualExclusion/proto";
+option go_package = "example.com/proto";
 package proto;
 
 

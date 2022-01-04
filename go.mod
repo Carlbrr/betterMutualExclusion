@@ -1,4 +1,4 @@
-module github.com/Carlbrr/BetterMutualExclusion
+module example.com
 
 go 1.17
 
