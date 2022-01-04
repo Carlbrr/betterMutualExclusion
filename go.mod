@@ -1,4 +1,4 @@
-module github.com/Carlbrr/disys_BetterMutualExclusion
+module github.com/Carlbrr/BetterMutualExclusion
 
 go 1.17
 

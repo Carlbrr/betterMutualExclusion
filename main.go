@@ -11,7 +11,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Carlbrr/disys_BetterMutualExclusion/proto"
+	"github.com/Carlbrr/BetterMutualExclusion/proto"
 	"google.golang.org/grpc"
 )
 
