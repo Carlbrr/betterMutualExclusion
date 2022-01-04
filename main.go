@@ -21,7 +21,7 @@ type Node struct {
 	timestamp    int
 	ports        []string
 	replyCounter int
-	queue        customQueue
+	queue        proto.customQueue
 	protoNode    proto.Node
 	mutex        sync.Locker
 	proto.UnimplementedExclusionServiceServer
